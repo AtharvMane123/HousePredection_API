@@ -36,7 +36,7 @@ def predict():
               'furnishingstatus':furnishingstatus
     }
 
-        test_input = np.array([area,bedrooms,bathrooms,mainroad,guestroom,basement,hotwaterheating,airconditioning,parking,furnishingstatus],dtype = object).reshape(1,10)   
+    test_input = np.array([[area,bedrooms,bathrooms,mainroad,guestroom,basement,hotwaterheating,airconditioning,parking,furnishingstatus]],dtype = object)  
     result  = model.predict(test_input)
     print(result)
     return jsonify({'placement':str(result)})
